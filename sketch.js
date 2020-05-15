@@ -22,7 +22,7 @@ function setup(){
 
 
     ground = new Ground((displayWidth - 20)/2,height,displayWidth-20,20);
-    platform = new Ground(150, 305, 300, 170);
+    platform = new Ground(150, height-95, 300, 170);
 
     box1 = new Box(displayWidth - 520,displayHeight - 110,70,70);
     box2 = new Box(displayWidth - 280,displayHeight - 110,70,70);
@@ -39,10 +39,10 @@ function setup(){
     log4 = new Log(displayWidth - 480,displayHeight - 310,150, PI/7);
     log5 = new Log(displayWidth - 330,displayHeight - 310,150, -PI/7);
 
-    bird = new Bird(200,50);
+    bird = new Bird(displayWidth/8,height-340);
 
     //log6 = new Log(230,180,80, PI/2);
-    slingshot = new SlingShot(bird.body,{x:200, y:50});
+    slingshot = new SlingShot(bird.body,{x:displayWidth/8, y:height-340});
 }
 
 function draw(){
