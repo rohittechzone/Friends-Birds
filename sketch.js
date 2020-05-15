@@ -16,7 +16,7 @@ function preload() {
 }
 
 function setup(){
-    var canvas = createCanvas(displayWidth - 20, displayHeight - 30);
+    var canvas = createCanvas(displayWidth, displayHeight - 80);
     engine = Engine.create();
     world = engine.world;
 
