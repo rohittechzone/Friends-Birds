@@ -16,14 +16,14 @@ function preload() {
 }
 
 function setup(){
-    var canvas = createCanvas(displayWidth, displayHeight - 80);
+    var canvas = createCanvas(displayWidth, displayHeight - 50);
     engine = Engine.create();
     world = engine.world;
 
 
     ground = new Ground((displayWidth - 20)/2,height,displayWidth-20,20);
-    platform = new Ground(150, height-95, 300, 170);
-
+    platform = new Ground((displayWidth-(displayWidth-(displayWidth/4)))-((displayWidth/4)/2),displayHeight-((displayHeight/5)-((displayHeight/25))), displayWidth/4, displayHeight/5);
+  // platform = new Ground(300,500, displayWidth/4, displayHeight/5);
     box1 = new Box(displayWidth - 520,displayHeight - 110,70,70);
     box2 = new Box(displayWidth - 280,displayHeight - 110,70,70);
     pig1 = new Pig(displayWidth - 410,displayHeight - 80);
@@ -36,8 +36,8 @@ function setup(){
     log3 =  new Log(displayWidth - 410,displayHeight - 250,300, PI/2);
 
     box5 = new Box(displayWidth - 410,displayHeight - 270,70,70);
-    log4 = new Log(displayWidth - 480,displayHeight - 310,150, PI/7);
-    log5 = new Log(displayWidth - 330,displayHeight - 310,150, -PI/7);
+    log4 = new Log(displayWidth - 460,displayHeight - 310,150, PI/7);
+    log5 = new Log(displayWidth - 320,displayHeight - 310,150, -PI/7);
 
     bird = new Bird(displayWidth/8,height-340);
 
