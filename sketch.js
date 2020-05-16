@@ -2,7 +2,7 @@ const Engine = Matter.Engine;
 const World= Matter.World;
 const Bodies = Matter.Bodies;
 const Constraint = Matter.Constraint;
-
+//var tx = (height-(height - platform.body.position.y)*3);
 var engine, world;
 var box1, pig1,pig3;
 var backgroundImg,platform;
@@ -22,13 +22,13 @@ function setup(){
 
 
     ground = new Ground((displayWidth - 20)/2,height,displayWidth-20,20);
-    platform = new Ground((displayWidth-(displayWidth-(displayWidth/4)))-((displayWidth/4)/2),displayHeight-((displayHeight/5)-((displayHeight/25))), displayWidth/4, displayHeight/5);
+    platform = new Ground((displayWidth-(displayWidth-(displayWidth/3)))-((displayWidth/3)/2),displayHeight-((displayHeight/3)-((displayHeight/10))), displayWidth/3, displayHeight/3);
   // platform = new Ground(300,500, displayWidth/4, displayHeight/5);
     box1 = new Box(displayWidth - 520,displayHeight - 110,70,70);
     box2 = new Box(displayWidth - 280,displayHeight - 110,70,70);
     pig1 = new Pig(displayWidth - 410,displayHeight - 80);
     log1 = new Log(displayWidth - 405,displayHeight - 170,300, PI/2);
-
+    box1.scale = 0.5;
     box3 = new Box(displayWidth - 520,displayHeight - 180,70,70);
     box4 = new Box(displayWidth - 280,displayHeight - 180,70,70);
     pig3 = new Pig(displayWidth - 410,displayHeight - 195);
@@ -36,13 +36,13 @@ function setup(){
     log3 =  new Log(displayWidth - 410,displayHeight - 250,300, PI/2);
 
     box5 = new Box(displayWidth - 410,displayHeight - 270,70,70);
-    log4 = new Log(displayWidth - 460,displayHeight - 310,150, PI/7);
-    log5 = new Log(displayWidth - 320,displayHeight - 310,150, -PI/7);
+    log4 = new Log(displayWidth - 460,displayHeight - 310,150, PI/4);
+    log5 = new Log(displayWidth - 320,displayHeight - 310,150, -PI/4);
 
     bird = new Bird(displayWidth/8,height-340);
 
     //log6 = new Log(230,180,80, PI/2);
-    slingshot = new SlingShot(bird.body,{x:displayWidth/8, y:height-340});
+    slingshot = new SlingShot(bird.body,{x:displayWidth/8, y:(height-(height - platform.body.position.y)*3)+20});
 }
 
 function draw(){

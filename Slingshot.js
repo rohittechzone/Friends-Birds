@@ -22,10 +22,10 @@ class SlingShot{
     }
 
     display(){
-        var tx = (height-(height - platform.body.position.y)*2);//-(platform.body.position.y);
-        console.log(tx);
+        var tx = (height-(height - platform.body.position.y)*3);//-(platform.body.position.y);
+     //   console.log(tx);
         image(this.sling1,displayWidth/8,tx);
-        image(this.sling2,(displayWidth/8)-30,height-377);
+        image(this.sling2,(displayWidth/8)-30,tx);
         if(this.sling.bodyA){
             var pointA = this.sling.bodyA.position;
             var pointB = this.pointB;
