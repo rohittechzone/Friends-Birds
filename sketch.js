@@ -2,7 +2,7 @@ const Engine = Matter.Engine;
 const World= Matter.World;
 const Bodies = Matter.Bodies;
 const Constraint = Matter.Constraint;
-//var tx = (height-(height - platform.body.position.y)*3);
+
 var engine, world;
 var box1, pig1,pig3;
 var backgroundImg,platform;
@@ -16,33 +16,33 @@ function preload() {
 }
 
 function setup(){
-    var canvas = createCanvas(displayWidth-20, displayHeight - 60);
+    var canvas = createCanvas(displayWidth,displayHeight);
     engine = Engine.create();
     world = engine.world;
 
 
-    ground = new Ground((displayWidth - 20)/2,height,displayWidth-20,20);
-    platform = new Ground((displayWidth-(displayWidth-(displayWidth/3)))-((displayWidth/3)/2),displayHeight-((displayHeight/3)-((displayHeight/10))), displayWidth/3, displayHeight/3);
-  // platform = new Ground(300,500, displayWidth/4, displayHeight/5);
-    box1 = new Box(displayWidth - 520,displayHeight - 110,70,70);
-    box2 = new Box(displayWidth - 280,displayHeight - 110,70,70);
-    pig1 = new Pig(displayWidth - 410,displayHeight - 80);
-    log1 = new Log(displayWidth - 405,displayHeight - 170,300, PI/2);
-    box1.scale = 0.5;
-    box3 = new Box(displayWidth - 520,displayHeight - 180,70,70);
-    box4 = new Box(displayWidth - 280,displayHeight - 180,70,70);
-    pig3 = new Pig(displayWidth - 410,displayHeight - 195);
+    ground = new Ground(600,height,1200,20);
+    platform = new Ground(150, 305, 300, 170);
 
-    log3 =  new Log(displayWidth - 410,displayHeight - 250,300, PI/2);
+    box1 = new Box(700,320,70,70);
+    box2 = new Box(920,320,70,70);
+    pig1 = new Pig(810, 350);
+    log1 = new Log(810,260,300, PI/2);
 
-    box5 = new Box(displayWidth - 410,displayHeight - 270,70,70);
-    log4 = new Log(displayWidth - 460,displayHeight - 310,150, PI/4);
-    log5 = new Log(displayWidth - 320,displayHeight - 310,150, -PI/4);
+    box3 = new Box(700,240,70,70);
+    box4 = new Box(920,240,70,70);
+    pig3 = new Pig(810, 220);
 
-    bird = new Bird(displayWidth/8,height-340);
+    log3 =  new Log(810,180,300, PI/2);
+
+    box5 = new Box(810,160,70,70);
+    log4 = new Log(760,120,150, PI/7);
+    log5 = new Log(870,120,150, -PI/7);
+
+    bird = new Bird(200,50);
 
     //log6 = new Log(230,180,80, PI/2);
-    slingshot = new SlingShot(bird.body,{x:displayWidth/8, y:(height-(height - platform.body.position.y)*3)+20});
+    slingshot = new SlingShot(bird.body,{x:200, y:50});
 }
 
 function draw(){
@@ -84,9 +84,8 @@ function mouseReleased(){
 }
 
 function keyPressed(){
-    if(keyCode === 32 ){
-        slingshot.attach(bird.body);
-        gameState = "onSling";
+    if(keyCode === 32){
+       // slingshot.attach(bird.body);
     }
 }
 

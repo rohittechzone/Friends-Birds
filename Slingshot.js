@@ -22,17 +22,15 @@ class SlingShot{
     }
 
     display(){
-        var tx = (height-(height - platform.body.position.y)*3);//-(platform.body.position.y);
-     //   console.log(tx);
-        image(this.sling1,displayWidth/8,tx);
-        image(this.sling2,(displayWidth/8)-30,tx);
+        image(this.sling1,200,20);
+        image(this.sling2,170,20);
         if(this.sling.bodyA){
             var pointA = this.sling.bodyA.position;
             var pointB = this.pointB;
             push();
             
             stroke(48,22,8);
-            if(pointA.x < (displayWidth/8)+50) {
+            if(pointA.x < 220) {
                 strokeWeight(7);
                 line(pointA.x - 20, pointA.y, pointB.x -10, pointB.y);
                 line(pointA.x - 20, pointA.y, pointB.x + 30, pointB.y - 3);
